@@ -24,7 +24,7 @@
                 <ul class="nav navbar-nav">
                   <li><a class="menu" href="#templatemo_home_page">Home</a></li>
                   <li><a class="menu" href="#templatemo_service_page">Services</a></li>
-                  <li><a class="menu" href="#templatemo_work_page">Projects</a></li>
+                  <li><a class="menu" href="#templatemo_work_page">Weather</a></li>
                   <li><a class="menu" href="#templatemo_team_page">Our Team</a></li>
                   <li><a class="menu" href="#templatemo_contact_page">Contact</a></li>
                 </ul>
@@ -100,257 +100,193 @@
 <div class="templatemo_workwrapper" id="templatemo_work_page">
   <div class="container">
     <div class="row">
-      <h1>Current Projects</h1>
-      <div class="col-md-12 templatemo_workmargin">Donec leo sem, commodo in, bibendum iaculis, euismod vitae, risus. Suspendisse a erat id urna dapibus varius. Proin facilisis, nisi eget rutrum rutrum, sapien arcu molestie sem, eget gravida sapien nisi in ante.</div>
+      <h1>Today's Weather</h1>
+      <br>
     </div>
   </div>
   <div>
     <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/1.jpg" alt="work 1">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #001</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/1.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
+      <div class="report-container">
+        <h2><?php echo $data->name; ?> Weather Status</h2>
+        <div class="time">
+          <div><?php echo date("l g:i a", $currenttime); ?></div>
+          <div><?php echo date("jS F, Y", $currenttime); ?></div>
+          <div><?php echo ucwords($data->weather[0]->description); ?></div>
         </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/2.jpg" alt="work 2">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #002</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/2.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
+        <div class="weather-forecast">
+          <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" /> <?php echo $data->main->temp_max; ?>°C<span class="min-temperature"><?php echo $data->main->temp_min; ?>°C</span>
         </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/3.jpg" alt="work 3">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #003</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/3.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/4.jpg" alt="work 4">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #004</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/4.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/5.jpg" alt="work 5">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #005</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/5.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/6.jpg" alt="work 6">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #006</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/6.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/7.jpg" alt="work 7">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #007</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/7.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="templatemo_workbox">
-      <div class="gallery-item"><img src="images/work/8.jpg" alt="work 8">
-        <div class="overlay">
-          <div class="templatemo_worktitle">Project #008</div>
-          <div class="templatemo_workdes">Morbi et nisi in augue accumsan imperdiet</div>
-          <div class="templatemo_worklink"><a href="images/work/8.jpg" data-rel="lightbox" class="fa fa-search-plus"></a></div>
-          <div class="templatemo_worklink"><a href="#" class="fa fa-link"></a></div>
+        <div class="time">
+          <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
+          <div>Wind: <?php echo $data->wind->speed; ?> km/h</div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!--work end-->
-<div class="clear"></div>
-<!-- team start -->
-<div class="templatemo_team_wrapper" id="templatemo_team_page">
-  <div class="container">
-    <div class="row">
-      <h1>Our Team</h1>
-      <div class="col-md-12 templatemo_workmargin">Suspendisse potenti. Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien. Mauris luctus. Aenean elit turpis, volutpat id, facilisis eget, mollis a, est. Nulla eget elit pellentesque enim hendrerit venenatis.</div>
-      <div id="w">
-        <div class="crsl-items" data-navigation="navbtns">
-          <div class="crsl-wrap">
-            <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
-              <div class="templatemo_team_name">Mauris Luctus</div>
-              <div class="templatemo_team_post">CEO</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+  <!--work end-->
+  <div class="clear"></div>
+  <!-- team start -->
+  <div class="templatemo_team_wrapper" id="templatemo_team_page">
+    <div class="container">
+      <div class="row">
+        <h1>Our Team</h1>
+        <div class="col-md-12 templatemo_workmargin">Suspendisse potenti. Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien. Mauris luctus. Aenean elit turpis, volutpat id, facilisis eget, mollis a, est. Nulla eget elit pellentesque enim hendrerit venenatis.</div>
+        <div id="w">
+          <div class="crsl-items" data-navigation="navbtns">
+            <div class="crsl-wrap">
+              <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
+                <div class="templatemo_team_name">Mauris Luctus</div>
+                <div class="templatemo_team_post">CEO</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- post #1 -->
-            <div class="crsl-item"><img src="images/team/02.jpg" alt="person 2">
-              <div class="templatemo_team_name">Etiam Massa</div>
-              <div class="templatemo_team_post">Director</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+              <!-- post #1 -->
+              <div class="crsl-item"><img src="images/team/02.jpg" alt="person 2">
+                <div class="templatemo_team_name">Etiam Massa</div>
+                <div class="templatemo_team_post">Director</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- post #2 -->
-            <div class="crsl-item"><img src="images/team/03.jpg" alt="person 3">
-              <div class="templatemo_team_name">Mauris Luctus</div>
-              <div class="templatemo_team_post">New Manager</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+              <!-- post #2 -->
+              <div class="crsl-item"><img src="images/team/03.jpg" alt="person 3">
+                <div class="templatemo_team_name">Mauris Luctus</div>
+                <div class="templatemo_team_post">New Manager</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- post #3 -->
-            <div class="crsl-item"><img src="images/team/04.jpg" alt="person 4">
-              <div class="templatemo_team_name">Morbi Pulvinar</div>
-              <div class="templatemo_team_post">Designer</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+              <!-- post #3 -->
+              <div class="crsl-item"><img src="images/team/04.jpg" alt="person 4">
+                <div class="templatemo_team_name">Morbi Pulvinar</div>
+                <div class="templatemo_team_post">Designer</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- post #4 -->
-            <div class="crsl-item"><img src="images/team/05.jpg" alt="person 5">
-              <div class="templatemo_team_name">Mauris Luctus</div>
-              <div class="templatemo_team_post">Developer</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+              <!-- post #4 -->
+              <div class="crsl-item"><img src="images/team/05.jpg" alt="person 5">
+                <div class="templatemo_team_name">Mauris Luctus</div>
+                <div class="templatemo_team_post">Developer</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <!-- post #5 -->
-            <div class="crsl-item"><img src="images/team/06.jpg" alt="person 6">
-              <div class="templatemo_team_name">Mauris Luctus</div>
-              <div class="templatemo_team_post">Technical Staff</div>
-              <div class="templatemo_social">
-                <ul>
-                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                  <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                </ul>
+              <!-- post #5 -->
+              <div class="crsl-item"><img src="images/team/06.jpg" alt="person 6">
+                <div class="templatemo_team_name">Mauris Luctus</div>
+                <div class="templatemo_team_post">Technical Staff</div>
+                <div class="templatemo_social">
+                  <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                  </ul>
+                </div>
               </div>
+              <!-- post #6 -->
             </div>
-            <!-- post #6 -->
+            <!-- @end .crsl-wrap -->
           </div>
-          <!-- @end .crsl-wrap -->
+          <!-- @end .crsl-items -->
         </div>
-        <!-- @end .crsl-items -->
+        <div class="clear"></div>
+        <nav class="slidernav">
+          <div id="navbtns" class="clearfix"><a href="#" class="previous"><img src="images/slideitmoo_back.png" alt="previous"></a> <a href="#" class="next"><img src="images/slideitmoo_forward.png" alt="next"></a></div>
+        </nav>
       </div>
-      <div class="clear"></div>
-      <nav class="slidernav">
-        <div id="navbtns" class="clearfix"><a href="#" class="previous"><img src="images/slideitmoo_back.png" alt="previous"></a> <a href="#" class="next"><img src="images/slideitmoo_forward.png" alt="next"></a></div>
-      </nav>
-    </div>
-    <script>
-      $(function() {
-        $('.crsl-items').carousel({
-          visible: 4,
-          itemMinWidth: 180,
-          itemEqualHeight: 370,
-          itemMargin: 9,
+      <script>
+        $(function() {
+          $('.crsl-items').carousel({
+            visible: 4,
+            itemMinWidth: 180,
+            itemEqualHeight: 370,
+            itemMargin: 9,
+          });
+          $("a[href=#]").on('click', function(e) {
+            e.preventDefault();
+          });
         });
-        $("a[href=#]").on('click', function(e) {
-          e.preventDefault();
-        });
-      });
-    </script>
-  </div>
-</div>
-<!-- team end -->
-<div class="clear"></div>
-<!-- contact start -->
-<div class="templatemo_contactwrapper" id="templatemo_contact_page">
-  <div class="container">
-    <div class="row">
-      <h1>Contact</h1>
+      </script>
     </div>
   </div>
-  <div class="templatemo_contactmap">
-    <div id="templatemo_map"></div>
-  </div>
-  <div class="container templatemo_contactmargin">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="templatemo_address_title">Mailing Address:</div>
-        No 123, Duis in enim road, Sed sit amet arcu ut quam porttitor.
-        <div class="clear"></div>
-        <div class="templatemo_address_left">Call us:</div>
-        <div class="templatemo_address_right">+001 333 000 1010<br>
-          +002 666 000 2020</div>
-        <div class="clear"></div>
-        <div class="templatemo_address_left">Hot line:</div>
-        <div class="templatemo_address_right">+009 000 999 0000</div>
-        <div class="clear"></div>
-        <div class="templatemo_address_left">Email us:</div>
-        <div class="templatemo_address_right">admin@company.com<br>
-          info@company.com</div>
+  <!-- team end -->
+  <div class="clear"></div>
+  <!-- contact start -->
+  <div class="templatemo_contactwrapper" id="templatemo_contact_page">
+    <div class="container">
+      <div class="row">
+        <h1>Contact</h1>
       </div>
-      <form action="#" method="post">
-        <div class="col-md-9">
-          <div class="col-md-4">
-            <input type="text" name="name" id="name" class="name" placeholder="Your Name">
-          </div>
-          <div class="col-md-4">
-            <input type="text" name="email" id="email" class="email" placeholder="Your Email">
-          </div>
-          <div class="col-md-4">
-            <input type="text" name="subject" id="subject" class="subject" placeholder="Subject">
-          </div>
-          <div class="col-md-12">
-            <textarea name="message" cols="1" rows="1" class="message" placeholder="Your message... " id="message"></textarea>
-          </div>
-          <div class="col-md-4">
-            <input type="submit" name="send" value="Send Message" id="submit" class="button templatemo_sendbtn">
-          </div>
+    </div>
+    <div class="templatemo_contactmap">
+      <div id="templatemo_map"></div>
+    </div>
+    <div class="container templatemo_contactmargin">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="templatemo_address_title">Mailing Address:</div>
+          No 123, Duis in enim road, Sed sit amet arcu ut quam porttitor.
+          <div class="clear"></div>
+          <div class="templatemo_address_left">Call us:</div>
+          <div class="templatemo_address_right">+001 333 000 1010<br>
+            +002 666 000 2020</div>
+          <div class="clear"></div>
+          <div class="templatemo_address_left">Hot line:</div>
+          <div class="templatemo_address_right">+009 000 999 0000</div>
+          <div class="clear"></div>
+          <div class="templatemo_address_left">Email us:</div>
+          <div class="templatemo_address_right">admin@company.com<br>
+            info@company.com</div>
         </div>
-      </form>
+        <form action="#" method="post">
+          <div class="col-md-9">
+            <div class="col-md-4">
+              <input type="text" name="name" id="name" class="name" placeholder="Your Name">
+            </div>
+            <div class="col-md-4">
+              <input type="text" name="email" id="email" class="email" placeholder="Your Email">
+            </div>
+            <div class="col-md-4">
+              <input type="text" name="subject" id="subject" class="subject" placeholder="Subject">
+            </div>
+            <div class="col-md-12">
+              <textarea name="message" cols="1" rows="1" class="message" placeholder="Your message... " id="message"></textarea>
+            </div>
+            <div class="col-md-4">
+              <input type="submit" name="send" value="Send Message" id="submit" class="button templatemo_sendbtn">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<!-- contact end -->
-@endsection
+  <!-- contact end -->
+  @endsection
