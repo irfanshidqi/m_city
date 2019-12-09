@@ -20,12 +20,13 @@
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div id="top-menu">
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
                                 <ul class="nav navbar-nav">
                                     <li><a class="menu" href="#menu">Menu</a></li>
                                     @foreach($navbar->folders as $nb)
-                                    <li><a class="menu" href="#{{$nb->id}}">{{$nb->name}}</a></li>
+                                    <li><a class="menu" href="#menu{{$nb->id}}">{{$nb->name}}</a></li>
                                     @endforeach
+                                    <li><a class="menu" href="#weather">Weather</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -37,6 +38,27 @@
             </div>
         </div>
     </div>
+    {{-- test slider --}}
+    {{-- <div class="flexslider">
+            <ul class="slides">
+                <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; transition: opacity 0.6s ease 0s; z-index: 1;">
+                    <img src="/images/slider/banner01.jpg" alt="" draggable="false">
+                    <div class="flex-caption animated bounceInDown">
+                        <h2>Compass Template</h2>
+                        <span></span>
+                        <p>Praesent tincidunt neque semper elementum gravida. Donec id euismod magna.<br>Ut erat ligula, malesuada eu quam a, fringilla auctor augue.</p>
+                    </div>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; transition: opacity 0.6s ease 0s; z-index: 2;" class="flex-active-slide">
+                    <img src="/images/slider/1.jpg" alt="" draggable="false">
+                    <div class="flex-caption animated bounceInDown">
+                        <h2>Responsive Mobile</h2>
+                        <span></span>
+                        <p>Ea, similique, odit id consectetur est beatae quia dicta officiis ipsam itaque in<br>facilis aliquid quas officia voluptatem repellendus repellat!</p>
+                    </div>
+                </li>
+            </ul>
+        <ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul></div> --}}
     <div class="templatemo_headerimage">
         <div class="flexslider">
             <ul class="slides">
@@ -58,19 +80,41 @@
         <div class="row">
             <h1>Menu</h1>
             <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+           <div class="row">
+               <div class=" col-md-3">
+
+
+
+ 
+               </div>
+               <div class=" col-md-9">
+                    <div id="top-menu">
+                            <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
+        
+                            </div>
+                        </div>
+               </div>
+           </div>
+           <br>
+
             @foreach($menu->result->default as $mn)
-            <div class="col-md-3 col-sm-6 paddingbot">
+            <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+                 @csrf
+
                 <div class="templatemo_servicebox">
                     <img src="{{$mn->menu_icon_url}}" height="50" width="50">
                     <div class="templatemo_service_title">{{$mn->menu_name}}</div>
                 </div>
             </div>
             @endforeach
-            <div class="col-md-3 col-sm-6 paddingbot">
+            <div class="col-md-3 col-sm-6 paddingbot klik-lain">
                 <div class="templatemo_servicebox">
                     <img src="{{$mn->menu_icon_url}}" height="50" width="50">
                     <div class="templatemo_service_title">Lainnya</div>
                 </div>
+            </div>
+            <div class="lain-nya">
+
             </div>
         </div>
     </div>
@@ -78,7 +122,8 @@
 <!-- service end -->
 <div class="clear"></div>
 <!-- work start -->
-<div class="templatemo_workwrapper" id="templatemo_work_page">
+
+<div class="templatemo_workwrapper" id="weather">
     <div>
         <div class="">
             <div class="report-container">
@@ -100,28 +145,34 @@
     </div>
     <!--work end-->
     <div class="clear"></div>
+
     <!-- team start -->
-    <div class="templatemo_team_wrapper" id="templatemo_team_page">
+    <div class="templatemo_workwrapper" id="menu{{$navbar->folders[2]->id}}">
         <div class="container">
             <div class="row">
                 <h1>Nearby</h1>
                 <div class="col-md-12 templatemo_workmargin">Suspendisse potenti. Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien. Mauris luctus. Aenean elit turpis, volutpat id, facilisis eget, mollis a, est. Nulla eget elit pellentesque enim hendrerit venenatis.</div>
                 <div id="w">
                     <div class="crsl-items" data-navigation="navbtns">
+
                         <div class="crsl-wrap">
-                            <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
-                                <div class="templatemo_team_name">Mauris Luctus</div>
-                                <div class="templatemo_team_post">CEO</div>
-                                <div class="templatemo_social">
-                                    <ul>
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                    </ul>
+                                @foreach ($nearby->result as $n)
+                                <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
+                                    <div class="templatemo_team_name">{{$n->name}}</div>
+                                    <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div>
+                                    <div class="templatemo_social">
+                                        {{-- <ul>
+                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                                        </ul> --}}
+                                    </div>
                                 </div>
-                            </div>
+                                @endforeach
+
                         </div>
+
                         <!-- @end .crsl-wrap -->
                     </div>
                     <!-- @end .crsl-items -->
