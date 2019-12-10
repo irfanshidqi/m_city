@@ -3,6 +3,11 @@
 
 <!-- page main -->
 @section('content')
+<style>
+    .d-none {
+        display: none;
+    }
+</style>
 <div id="templatemo_home_page">
     <div class="templatemo_topbar">
         <div class="container">
@@ -80,26 +85,26 @@
         <div class="row">
             <h1>Menu</h1>
             <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-           <div class="row">
-               <div class=" col-md-3">
+            <div class="row">
+                <div class=" col-md-3">
 
 
 
- 
-               </div>
-               <div class=" col-md-9">
+
+                </div>
+                <div class=" col-md-9">
                     <div id="top-menu">
-                            <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
-        
-                            </div>
+                        <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
+
                         </div>
-               </div>
-           </div>
-           <br>
+                    </div>
+                </div>
+            </div>
+            <br>
 
             @foreach($menu->result->default as $mn)
             <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
-                 @csrf
+                @csrf
 
                 <div class="templatemo_servicebox">
                     <img src="{{$mn->menu_icon_url}}" height="50" width="50">
@@ -113,7 +118,7 @@
                     <div class="templatemo_service_title">Lainnya</div>
                 </div>
             </div>
-            <div class="lain-nya">
+            <div class="lain-nya d-none">
 
             </div>
         </div>
@@ -156,20 +161,20 @@
                     <div class="crsl-items" data-navigation="navbtns">
 
                         <div class="crsl-wrap">
-                                @foreach ($nearby->result as $n)
-                                <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
-                                    <div class="templatemo_team_name">{{$n->name}}</div>
-                                    <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div>
-                                    <div class="templatemo_social">
-                                        {{-- <ul>
+                            @foreach ($nearby->result as $n)
+                            <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
+                                <div class="templatemo_team_name">{{$n->name}}</div>
+                                <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div>
+                                <div class="templatemo_social">
+                                    {{-- <ul>
                                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                                             <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
                                             <li><a href="#"><span class="fa fa-skype"></span></a></li>
                                         </ul> --}}
-                                    </div>
                                 </div>
-                                @endforeach
+                            </div>
+                            @endforeach
 
                         </div>
 

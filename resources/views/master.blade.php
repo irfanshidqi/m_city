@@ -30,11 +30,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="js/templatemo_custom.js"></script>
     <script src="js/responsiveCarousel.min.js"></script>
     <style>
-
-    div.paddingbot:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}</style>
+        div.paddingbot:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -102,7 +102,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     </script>
 
     <script>
-        function data_menu($id){
+        function data_menu($id) {
             var id = $id;
             var _token = $('input[name="_token"]').val();
             // alert(id);
@@ -110,7 +110,10 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             $.ajax({
                 url: "{{ route('menu.fetch') }}",
                 method: "POST",
-                data:{_token:_token, id:id},
+                data: {
+                    _token: _token,
+                    id: id
+                },
                 success: function(data) {
                     // console.log(data);
                     $('.menu-data').html(data);
@@ -118,18 +121,16 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                 }
             });
         }
-
-
     </script>
     <script>
-        $(document).ready(function(){
-            $('.klik-lain').click(function(e){
+        $(document).ready(function() {
+            $('.klik-lain').click(function(e) {
                 // var a = 1;
                 // alert(a);
                 $.ajax({
                     url: "{{ route('lain.fetch') }}",
                     method: "GET",
-                    success: function(data){
+                    success: function(data) {
                         console.log(data);
                         $('.lain-nya').html(data);
 
@@ -139,10 +140,14 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
 
         });
-
-    
-    
-        </script>
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.klik-lain').on('click', function() {
+                $('.lain-nya').toggleClass('d-none');
+            });
+        });
+    </script>
 </body>
 
 </html>
