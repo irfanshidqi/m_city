@@ -18,6 +18,8 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <link rel="stylesheet" href="{{ asset('css/templatemo_misc.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('modal/modal.css') }}">
+
     <!-- JavaScripts -->
     <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
@@ -29,12 +31,41 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('js/jquery.lightbox.js') }}"></script>
     <script src="{{ asset('js/templatemo_custom.js') }}"></script>
     <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
+    <script src="{{ asset('modal/modal.js') }}"></script>
+
     <style>
         div.paddingbot:hover {
             opacity: 0.5;
             cursor: pointer;
         }
     </style>
+<style>
+    .loader {
+      border: 10px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 10px solid #3498db;
+      width: 40px;
+      height: 40px;
+      -webkit-animation: spin 2s linear infinite; /* Safari */
+      animation: spin 1s linear infinite;
+    }
+    
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+    <style>
+    .center {
+  margin: auto;
+
+}</style>
 </head>
 
 <body>
@@ -102,7 +133,17 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     </script>
 
     <script>
+        function remove_load(){
+            var load = document.getElementById('loader');
+
+
+            load.classList.add("d-none");
+
+        }
+
         function data_menu($id) {
+            var load = document.getElementById('loader');
+
             var id = $id;
             var _token = $('input[name="_token"]').val();
             // alert(id);
@@ -120,6 +161,10 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
 
                 }
             });
+
+            load.classList.remove('d-none');
+            setTimeout(remove_load,280);
+
         }
     </script>
     <script>
@@ -145,6 +190,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         $(document).ready(function() {
             $('.klik-lain').on('click', function() {
                 $('.lain-nya').toggleClass('d-none');
+
             });
         });
     </script>

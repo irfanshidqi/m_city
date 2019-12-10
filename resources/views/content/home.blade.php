@@ -79,21 +79,21 @@
     <div class="container">
         <div class="row">
             <h1>Menu</h1>
+            <div id="loader" class="loader center d-none"></div>
+
             {{-- <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div> --}}
             <div class="row">
-                <div class=" col-md-3">
-
-
-
+                <div class=" col-md-4">
 
                 </div>
-                <div class=" col-md-9">
+                <div class=" col-md-5">
                     <div id="top-menu">
                         <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
 
                         </div>
                     </div>
                 </div>
+
             </div>
             <br>
 
@@ -113,9 +113,11 @@
                     <div class="templatemo_service_title">Lainnya</div>
                 </div>
             </div>
+
             <div class="lain-nya d-none">
 
             </div>
+
         </div>
     </div>
 </div>
@@ -199,5 +201,6 @@
     </div>
     <!-- team end -->
     <div class="clear"></div>
+
 
     @endsection
