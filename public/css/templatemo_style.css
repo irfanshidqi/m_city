@@ -143,19 +143,14 @@ h1 {
     margin: 0 auto;
 }
 .templatemo_homebutton {
-    background: #ee785c;
-    padding: 15px 0;
     text-align: center;
     font-size: 20px;
-    border-radius: 5px;
-    width: 150px;
     color: #e3e3e3;
 }
 .templatemo_homebutton a {
     color: #e3e3e3;
 }
 :hover.templatemo_homebutton {
-    background: #e46142;
     cursor: pointer;
 }
 
@@ -559,7 +554,7 @@ Media Queries
         margin: 40px auto 0 auto;
         padding: 10px 0;
         font-size: 18px;
-        width: 130px;
+        width: 230px;
     }
     .templatemo_workbox {
         width: 25%;

@@ -8,83 +8,78 @@
         display: none;
     }
 </style>
+<!-- header start -->
 <div id="templatemo_home_page">
     <div class="templatemo_topbar">
-        <div class="container">
-            <div class="row">
-                <div class="templatemo_titlewrapper"><img src="images/templatemo_logobg.png" alt="logo background">
-                    <div class="templatemo_title"><span>Temanggung Gandem</span></div>
+      <div class="container">
+        <div class="row">
+          <div class="templatemo_titlewrapper"><img src="images/templatemo_logobg.png" alt="logo background">
+            <div class="templatemo_title"><span>Temanggung Gandem</span></div>
+          </div>
+          <div class="clear"></div>
+          <div class="templatemo_titlewrappersmall">Temanggung Gandem</div>
+          <nav class="navbar navbar-default templatemo_menu" role="navigation">
+            <div class="container-fluid"> 
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div id="top-menu">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="menu" href="#menu">Menu Service</a></li>
+                        @foreach($navbar->folders as $nb)
+                        <li><a class="menu" href="#menu{{$nb->id}}">{{$nb->name}}</a></li>
+                        @endforeach
+                        <li><a class="menu" href="#weather">Weather</a></li>
+                    </ul>
                 </div>
-                <div class="clear"></div>
-                <div class="templatemo_titlewrappersmall">Temanggung Gandem</div>
-                <nav class="navbar navbar-default templatemo_menu" role="navigation">
-                    <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div id="top-menu">
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
-                                <ul class="nav navbar-nav">
-                                    <li><a class="menu" href="#menu">Menu</a></li>
-                                    @foreach($navbar->folders as $nb)
-                                    <li><a class="menu" href="#menu{{$nb->id}}">{{$nb->name}}</a></li>
-                                    @endforeach
-                                    <li><a class="menu" href="#weather">Weather</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.navbar-collapse -->
-                    </div>
-                    <!-- /.container-fluid -->
-                </nav>
-                <div class="clear"></div>
+              </div>
+              <!-- /.navbar-collapse --> 
             </div>
+            <!-- /.container-fluid --> 
+          </nav>
+          <div class="clear"></div>
         </div>
+      </div>
     </div>
-    {{-- test slider --}}
-    {{-- <div class="flexslider">
-            <ul class="slides">
-                <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; transition: opacity 0.6s ease 0s; z-index: 1;">
-                    <img src="/images/slider/banner01.jpg" alt="" draggable="false">
-                    <div class="flex-caption animated bounceInDown">
-                        <h2>Compass Template</h2>
-                        <span></span>
-                        <p>Praesent tincidunt neque semper elementum gravida. Donec id euismod magna.<br>Ut erat ligula, malesuada eu quam a, fringilla auctor augue.</p>
-                    </div>
-                </li>
-                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; transition: opacity 0.6s ease 0s; z-index: 2;" class="flex-active-slide">
-                    <img src="/images/slider/1.jpg" alt="" draggable="false">
-                    <div class="flex-caption animated bounceInDown">
-                        <h2>Responsive Mobile</h2>
-                        <span></span>
-                        <p>Ea, similique, odit id consectetur est beatae quia dicta officiis ipsam itaque in<br>facilis aliquid quas officia voluptatem repellendus repellat!</p>
-                    </div>
-                </li>
-            </ul>
-        <ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul></div> --}}
     <div class="templatemo_headerimage">
-        <div class="flexslider">
-            <ul class="slides">
-                @foreach($slider->result as $sld)
-                <li>
-                    <img src="http://temanggung.mcity.id/files/img/{{$sld->images}}" alt="Slide 1">
-                    <p>{{$sld->name}}</p>
-                </li>
-                @endforeach
-            </ul>
-        </div>
+      <div class="flexslider">
+        <ul class="slides">
+            @foreach($slider->result as $sld)
+            <li>
+                <img style="height:500px;" src="http://temanggung.mcity.id/files/content/{{$sld->images}}" alt="Slide 1">
+                <div class="slider-caption">
+                    <div class="templatemo_homewrapper">
+                            <div class="templatemo_homebutton">
+                                    <img style="width:200px;height:100px;" src="{{asset('images/temanggung/temanggung.png')}}">
+                            </div>
+
+
+                      <div class="templatemo_hometitle">
+                          {{$sld->name}}
+                        </div>
+                      {{-- <div class="templatemo_hometext">{% autoescape off %}
+                        {{$sld->description}}
+                    {% endautoescape %}</div> --}}
+                    </div>
+                  </div>
+            </li>
+            @endforeach
+        </ul>
+      </div>
     </div>
-</div>
-<!-- header end -->
-<div class="clear"></div>
+
+  </div>
+  <!-- header end -->
+  <div class="clear"></div>
 <!-- service start -->
 <div class="templatemo_servicewrapper" id="menu">
     <div class="container">
         <div class="row">
             <h1>Menu</h1>
-            <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+            {{-- <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div> --}}
             <div class="row">
                 <div class=" col-md-3">
 
@@ -114,7 +109,7 @@
             @endforeach
             <div class="col-md-3 col-sm-6 paddingbot klik-lain">
                 <div class="templatemo_servicebox">
-                    <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                    <img src="{{asset('images/temanggung/lainnya.png')}}" height="50" width="50">
                     <div class="templatemo_service_title">Lainnya</div>
                 </div>
             </div>
@@ -162,9 +157,9 @@
 
                         <div class="crsl-wrap">
                             @foreach ($nearby->result as $n)
-                            <div class="crsl-item"><img src="images/team/01.jpg" alt="person 1">
+                        <div class="crsl-item"><img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
                                 <div class="templatemo_team_name">{{$n->name}}</div>
-                                <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div>
+                                {{-- <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div> --}}
                                 <div class="templatemo_social">
                                     {{-- <ul>
                                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -204,54 +199,5 @@
     </div>
     <!-- team end -->
     <div class="clear"></div>
-    <!-- contact start -->
-    <div class="templatemo_contactwrapper" id="templatemo_contact_page">
-        <div class="container">
-            <div class="row">
-                <h1>Contact</h1>
-            </div>
-        </div>
-        <div class="templatemo_contactmap">
-            <div id="templatemo_map"></div>
-        </div>
-        <div class="container templatemo_contactmargin">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="templatemo_address_title">Mailing Address:</div>
-                    No 123, Duis in enim road, Sed sit amet arcu ut quam porttitor.
-                    <div class="clear"></div>
-                    <div class="templatemo_address_left">Call us:</div>
-                    <div class="templatemo_address_right">+001 333 000 1010<br>
-                        +002 666 000 2020</div>
-                    <div class="clear"></div>
-                    <div class="templatemo_address_left">Hot line:</div>
-                    <div class="templatemo_address_right">+009 000 999 0000</div>
-                    <div class="clear"></div>
-                    <div class="templatemo_address_left">Email us:</div>
-                    <div class="templatemo_address_right">admin@company.com<br>
-                        info@company.com</div>
-                </div>
-                <form action="#" method="post">
-                    <div class="col-md-9">
-                        <div class="col-md-4">
-                            <input type="text" name="name" id="name" class="name" placeholder="Your Name">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" name="email" id="email" class="email" placeholder="Your Email">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" name="subject" id="subject" class="subject" placeholder="Subject">
-                        </div>
-                        <div class="col-md-12">
-                            <textarea name="message" cols="1" rows="1" class="message" placeholder="Your message... " id="message"></textarea>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="submit" name="send" value="Send Message" id="submit" class="button templatemo_sendbtn">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- contact end -->
+
     @endsection

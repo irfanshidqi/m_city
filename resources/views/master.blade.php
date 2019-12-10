@@ -12,23 +12,23 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <meta name="viewport" content="initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Style Sheets -->
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/templatemo_misc.css">
-    <link rel="stylesheet" href="css/templatemo_style.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/templatemo_misc.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <!-- JavaScripts -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/jquery.singlePageNav.js"></script>
-    <script src="js/jquery.flexslider.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/jquery.lightbox.js"></script>
-    <script src="js/templatemo_custom.js"></script>
-    <script src="js/responsiveCarousel.min.js"></script>
+    <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-collapse.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-tab.js') }}"></script>
+    <script src="{{ asset('js/jquery.singlePageNav.js') }}"></script>
+    <script src="{{ asset('js/jquery.flexslider.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/jquery.lightbox.js') }}"></script>
+    <script src="{{ asset('js/templatemo_custom.js') }}"></script>
+    <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
     <style>
         div.paddingbot:hover {
             opacity: 0.5;
@@ -47,7 +47,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <div class="templatemo_footerwrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">Copyright &copy; 2084 <a href="#">Company Name</a>
+                <div class="col-md-12">Copyright &copy; 2019 <a href="#">Temanggung Smart City</a>
                     <!-- | Design: <a href="http://www.templatemo.com">templatemo</a> -->
                 </div>
             </div>
