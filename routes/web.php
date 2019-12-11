@@ -15,4 +15,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/menu/', 'DetMenuController@index');
 
 Route::post('/data-menu', 'HomeController@fetch_menu')->name('menu.fetch');
+Route::post('/detail-data-menu', 'HomeController@fetch_detailMenu')->name('detailmenu.fetch');
+Route::post('/data-content', 'HomeController@fetch_content')->name('content.fetch');
 Route::get('/data-lain', 'HomeController@fetch_more')->name('lain.fetch');

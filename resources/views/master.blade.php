@@ -19,6 +19,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('modal/modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
 
@@ -37,38 +38,41 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
 
     <style>
-#close {
-    float:right;
-    display:inline-block;
-    padding:2px 5px;
-    background:#ccc;
-}
+        #close {
+            float: right;
+            display: inline-block;
+            padding: 2px 5px;
+            background: #ccc;
+        }
+
         .d-none {
             display: none;
         }
+
         .example_e:hover {
-    color: #fd704e !important;
-    font-weight: 700 !important;
-    letter-spacing: 3px;
-    background: none;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.5s ease 0s;
-    }
-    .example_e {
-        font-size: 12px;
-        margin:3px;
-    
-    border: none;
-    background: #d6935b;
-    color: #ffffff !important;
-    font-weight: 100;
-    padding: 12px;
-    text-transform: uppercase;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.5s ease 0s;
-    }
+            color: #fd704e !important;
+            font-weight: 700 !important;
+            letter-spacing: 3px;
+            background: none;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+            transition: all 0.5s ease 0s;
+        }
+
+        .example_e {
+            font-size: 12px;
+            margin: 3px;
+
+            border: none;
+            background: #d6935b;
+            color: #ffffff !important;
+            font-weight: 100;
+            padding: 12px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.5s ease 0s;
+        }
     </style>
     <style>
         div.paddingbot:hover {
@@ -76,33 +80,45 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             cursor: pointer;
         }
     </style>
-<style>
-    .loader {
-      border: 10px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 10px solid #3498db;
-      width: 40px;
-      height: 40px;
-      -webkit-animation: spin 2s linear infinite; /* Safari */
-      animation: spin 1s linear infinite;
-    }
-    
-    /* Safari */
-    @-webkit-keyframes spin {
-      0% { -webkit-transform: rotate(0deg); }
-      100% { -webkit-transform: rotate(360deg); }
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    <style>
+        .loader {
+            border: 10px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 10px solid #3498db;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 1s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <style>
-    .center {
-  margin: auto;
+        .center {
+            margin: auto;
 
-}</style>
+        }
+    </style>
 </head>
 
 <body>
@@ -170,7 +186,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     </script>
 
     <script>
-        function remove_load(){
+        function remove_load() {
             var load = document.getElementById('loader');
 
 
@@ -200,8 +216,54 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
 
             load.classList.remove('d-none');
-            setTimeout(remove_load,280);
+            setTimeout(remove_load, 280);
 
+        }
+
+        function data_detail_menu($id) {
+            var load = document.getElementById('loader');
+
+            var id = $id;
+            var _token = $('input[name="_token"]').val();
+            // alert(id);
+
+            $.ajax({
+                url: "{{ route('detailmenu.fetch') }}",
+                method: "POST",
+                data: {
+                    _token: _token,
+                    id: id
+                },
+                success: function(data) {
+                    $('.detail_menu').html(data);
+                    $("#gone").remove();
+                }
+            });
+
+            setTimeout(remove_load, 280);
+        }
+
+        function data_content($id) {
+            var load = document.getElementById('loader');
+
+            var id = $id;
+            var _token = $('input[name="_token"]').val();
+            console.log(id);
+            // alert(id);
+
+            $.ajax({
+                url: "{{ route('content.fetch') }}",
+                method: "POST",
+                data: {
+                    _token: _token,
+                    id: id
+                },
+                success: function(data) {
+                    $('.content_modal').html(data);
+                    $("#gone").remove();
+                }
+            });
+            setTimeout(remove_load, 280);
         }
     </script>
     <script>
@@ -222,11 +284,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
 
         });
-    </script>                
+    </script>
     <script>
         $(document).ready(function() {
             $('.close-lain').on('click', function() {
-                $(".carousel-lain").css("display","none");
+                $(".carousel-lain").css("display", "none");
             });
         });
     </script>
@@ -234,34 +296,34 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         $(document).ready(function() {
             $('.klik-lain').on('click', function() {
                 // $('.lain-nya').toggleClass('d-none');
-                $(".carousel-lain").removeAttr("style");
+                $("#carousel-lain").toggle();
             });
         });
     </script>
-<script>
-$(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
-});
-</script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 5,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
