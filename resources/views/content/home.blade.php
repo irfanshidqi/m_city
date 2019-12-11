@@ -4,16 +4,16 @@
 <!-- page main -->
 @section('content')
 <style>
-    .d-none {
-        display: none;
-    }
+        .d-none {
+            display: none;
+        }
 </style>
 <!-- header start -->
 <div id="templatemo_home_page">
     <div class="templatemo_topbar">
       <div class="container">
         <div class="row">
-          <div class="templatemo_titlewrapper"><img src="images/templatemo_logobg.png" alt="logo background">
+          <div class="templatemo_titlewrapper"><img src="{{ asset('images/templatemo_logobg.png') }}" alt="logo background">
             <div class="templatemo_title"><span>Temanggung Gandem</span></div>
           </div>
           <div class="clear"></div>
@@ -80,19 +80,23 @@
         <div class="row">
             <h1>Menu</h1>
             <div id="loader" class="loader center d-none"></div>
+            <div class="owl-carousel owl-loaded owl-drag carousel-lain d-none" style="display: none;">
 
-            {{-- <div class="col-md-12 templatemo_marginbot">You can easily <strong>change icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam dapibus leo quis nisl. In lectus. Vivamus consectetuer pede in nisl. Mauris cursus pretium mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div> --}}
-            <div class="row">
-                <div class=" col-md-4">
-
-                </div>
-                <div class=" col-md-5">
-                    <div id="top-menu">
-                        <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
-
-                        </div>
+                @foreach($det->result as $mn)
+                <div class="paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+                    @csrf
+            
+                    <div class="templatemo_servicebox">
+                        {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
+                        <div class="templatemo_service_title">{{$mn->name}}</div>
                     </div>
                 </div>
+                @endforeach
+            
+              </div>
+                        <div class=" menu-data" >
+
+                        </div>
 
             </div>
             <br>
@@ -114,9 +118,37 @@
                 </div>
             </div>
 
-            <div class="lain-nya d-none">
+            {{-- <div class="lain-nya d-none">
 
+            </div> --}}
+            <h1>Pelayanan Publik</h1>
+            {{-- <div id="loader" class="loader center d-none"></div>
+
+            <div class="row">
+                <div class=" col-md-4">
+
+                </div>
+                <div class=" col-md-5">
+                    <div id="top-menu">
+                        <div class="collapse navbar-collapse menu-data" id="bs-example-navbar-collapse-9">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div> --}}
+            <br>
+
+            @foreach($menu->result->more as $mn)
+            <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+                @csrf
+
+                <div class="templatemo_servicebox">
+                    <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                    <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+                </div>
             </div>
+            @endforeach
 
         </div>
     </div>

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/menu/', 'DetMenuController@index');
 
 Route::post('/data-menu', 'HomeController@fetch_menu')->name('menu.fetch');
 Route::get('/data-lain', 'HomeController@fetch_more')->name('lain.fetch');

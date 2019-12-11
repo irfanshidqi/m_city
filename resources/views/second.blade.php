@@ -19,8 +19,6 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('modal/modal.css') }}">
-    <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
 
     <!-- JavaScripts -->
     <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
@@ -34,42 +32,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('js/templatemo_custom.js') }}"></script>
     <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
     <script src="{{ asset('modal/modal.js') }}"></script>
-    <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
 
-    <style>
-#close {
-    float:right;
-    display:inline-block;
-    padding:2px 5px;
-    background:#ccc;
-}
-        .d-none {
-            display: none;
-        }
-        .example_e:hover {
-    color: #fd704e !important;
-    font-weight: 700 !important;
-    letter-spacing: 3px;
-    background: none;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.5s ease 0s;
-    }
-    .example_e {
-        font-size: 12px;
-        margin:3px;
-    
-    border: none;
-    background: #d6935b;
-    color: #ffffff !important;
-    font-weight: 100;
-    padding: 12px;
-    text-transform: uppercase;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.5s ease 0s;
-    }
-    </style>
     <style>
         div.paddingbot:hover {
             opacity: 0.5;
@@ -222,46 +185,15 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
 
         });
-    </script>                
-    <script>
-        $(document).ready(function() {
-            $('.close-lain').on('click', function() {
-                $(".carousel-lain").css("display","none");
-            });
-        });
     </script>
     <script>
         $(document).ready(function() {
             $('.klik-lain').on('click', function() {
-                // $('.lain-nya').toggleClass('d-none');
-                $(".carousel-lain").removeAttr("style");
+                $('.lain-nya').toggleClass('d-none');
+
             });
         });
     </script>
-<script>
-$(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
-});
-</script>
 </body>
 
 </html>

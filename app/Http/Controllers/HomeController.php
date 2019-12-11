@@ -14,6 +14,8 @@ class HomeController extends Controller
         $data['slider'] = $this->slider();
         $data['currenttime'] = time();
         $data['nearby'] = $this->nearby();
+        $data['det'] = $this->det();
+
         return view('content.home', $data);
     }
 
@@ -128,25 +130,24 @@ class HomeController extends Controller
 
         $output = '
 
-            <ul class="nav navbar-nav">
-                                
+            <div class="button_cont" align="center">
+                               
              ';
              if(empty($string->result)){
                 $output .= '
-                <li><a class="menu" href="#">Hasil Tidak Ada</a></li>
-    
+                <a class="example_e" href="#" target="_blank" rel="nofollow noopener">Tidak Ada</a>
                                       ';
              }else{
                 foreach ($string->result as $i) {
 
                     $output .= '
-                    <li><a class="menu" href="#">' . $i->name . '</a></li>
-        
+                    <a class="example_e" href="#" target="_blank" rel="nofollow noopener">' . $i->name . '</a>
+
                                           ';
                 }
              }
 
-        $output .='</ul>';
+        $output .='</div>';
 
         return $output;
     }
@@ -186,5 +187,22 @@ class HomeController extends Controller
         $output .='</ul>';
 
         return $output;
+    }
+    public function det()
+    {
+        $googleApiUrl = "http://temanggung.mcity.id/index.php?mod=m.services&sub=content&act=view&typ=html&take=category&lang=id&menu_id=0";
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $googleApiUrl);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+
+        curl_close($ch);
+        return json_decode($response);
     }
 }
