@@ -279,22 +279,22 @@ class HomeController extends Controller
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
     
         ';
-        foreach ($string->result as $i) {
-            $output .= '
+
+        $output .= '
 
           <div class="w3-center"><br>
             <span onclick="document.getElementById(\'id01\').style.display=\'none\';" class="w3-button w3-xlarge w3-hover-red w3-display-topright"</span>
-            <h5>' . $i->category . '</h5>
-            <h3>' . $i->name . '</h3>
-            <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="500" width="500">
+            <h5>' . $string->result->category . '</h5>
+            <h3>' . $string->result->name . '</h3>
+            <img src="http://temanggung.mcity.id/files/content/' . $string->result->images . '" height="100" width="100">
           </div>
     
             <div class="w3-section">
               <label><b>Deskripsi</b></label>
-              <p>' . $i->description . '</p>
+              ' . $string->result->description . '
             </div>
           ';
-        }
+
         $output .= '
     
         </div>
@@ -303,6 +303,6 @@ class HomeController extends Controller
       
              ';
 
-        return $output;
+        return $response;
     }
 }

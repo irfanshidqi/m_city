@@ -18,6 +18,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="templatemo_titlewrappersmall">Temanggung Gandem</div>
+
                 <nav class="navbar navbar-default templatemo_menu" role="navigation">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->

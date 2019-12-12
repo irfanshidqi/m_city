@@ -19,7 +19,6 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('modal/modal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
 
@@ -36,6 +35,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
     <script src="{{ asset('modal/modal.js') }}"></script>
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <style>
         #close {
@@ -259,8 +259,20 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                     id: id
                 },
                 success: function(data) {
-                    $('.content_modal').html(data);
+
+                    var json = JSON.parse(data);
+
+
+                    Swal.fire({
+                        title: json['result'].name,
+                        text: json['result'].description,
+                        imageUrl: 'http://temanggung.mcity.id/files/content/' + json['result'].images,
+                        imageWidth: 400,
+                        imageHeight: 300,
+                        imageAlt: 'Custom image',
+                    })
                     $("#gone").remove();
+                    console.log(data);
                 }
             });
             setTimeout(remove_load, 280);
@@ -323,6 +335,17 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                 }
             })
         });
+
+        function modal() {
+            Swal.fire({
+                title: 'Sweet!',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+            })
+        }
     </script>
 </body>
 
