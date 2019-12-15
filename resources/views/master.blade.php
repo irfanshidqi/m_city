@@ -35,7 +35,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
     <script src="{{ asset('modal/modal.js') }}"></script>
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <style>
         #close {
@@ -261,17 +261,20 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                 success: function(data) {
 
                     var json = JSON.parse(data);
-
-
                     Swal.fire({
-                        title: json['result'].name,
-                        text: json['result'].description,
+                        title: '<span style="font-size:20px">' + json['result'].name + '<span>',
+                        html: '<span style="font-size:17px">' + json['result'].description + '<span>',
                         imageUrl: 'http://temanggung.mcity.id/files/content/' + json['result'].images,
                         imageWidth: 400,
                         imageHeight: 300,
                         imageAlt: 'Custom image',
+                        width: '650px',
+                        customClass: {
+                            html: 'swal-text',
+                        }
                     })
-                    $("#gone").remove();
+
+                    $("# gone ").remove();
                     console.log(data);
                 }
             });

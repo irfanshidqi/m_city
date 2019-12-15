@@ -227,29 +227,43 @@ class HomeController extends Controller
         $output = '
             <div class="templatemo_servicewrapper" id="detail_menu">
                 <div class="container">
-                    <div class="row">
       
              ';
         if (empty($string->result)) {
             $output .= '
                 <a class="example_e" href="#" target="_blank" rel="nofollow noopener">Tidak Ada</a>';
         } else {
+            $n = 1;
             foreach ($string->result as $i) {
+                if ($n % 5 == 1) {
 
-                $output .= '
-                <div class="col-md-3 col-sm-6 paddingbot klik-lain" onclick="data_content(' . $i->id . ')">
-                  <div class="templatemo_servicebox">
-                    <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="150" width="150">
-                    <div class="templatemo_service_title">' . $i->name . '</div>
-                    <p>' . $i->district . '</p>
-                  </div>
-                </div>
-                ';
+                    $output .= '
+                    <div class="row">
+                        <div class="col-md-3 paddingbot klik-lain" onclick="data_content(' . $i->id . ')">
+                            <div class="templatemo_servicebox">
+                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="150" width="150">
+                                <div class="templatemo_service_title">' . $i->name . '</div>
+                                <p>' . $i->district . '</p>
+                            </div>
+                        </div>';
+                } else if ($n % 5 == 0) {
+                    $output .= '
+                        </div>';
+                } else {
+                    $output .= '
+                        <div class="col-md-3 paddingbot klik-lain" onclick="data_content(' . $i->id . ')">
+                            <div class="templatemo_servicebox">
+                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="150" width="150">
+                                    <div class="templatemo_service_title">' . $i->name . '</div>
+                                <p>' . $i->district . '</p>
+                            </div>
+                        </div>';
+                }
+                $n++;
             }
         }
 
         $output .= '
-                </div>
             </div>
         </div>';
 
@@ -271,7 +285,7 @@ class HomeController extends Controller
 
         curl_close($ch);
         $string = json_decode($response);
-
+        $dsc = json_encode($string->result->description);
         $output = '';
 
         $output = '
@@ -291,7 +305,7 @@ class HomeController extends Controller
     
             <div class="w3-section">
               <label><b>Deskripsi</b></label>
-              ' . $string->result->description . '
+              ' . $dsc . '
             </div>
           ';
 

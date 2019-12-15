@@ -30,9 +30,9 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li><a class="menu" href="#menu">Menu Service</a></li>
-                                    @foreach($navbar->folders as $nb)
-                                    <li><a class="menu" href="#menu{{$nb->id}}">{{$nb->name}}</a></li>
-                                    @endforeach
+                                    <li><a class="menu" href="#content">Content</a></li>
+                                    <li><a class="menu" href="#">Home</a></li>
+                                    <li><a class="menu" href="#nearby">Nearby</a></li>
                                     <li><a class="menu" href="#weather">Weather</a></li>
                                 </ul>
                             </div>
@@ -56,8 +56,6 @@
                             <div class="templatemo_homebutton">
                                 <img style="width:200px;height:100px;" src="{{asset('images/temanggung/temanggung.png')}}">
                             </div>
-
-
                             <div class="templatemo_hometitle">
                                 {{$sld->name}}
                             </div>
@@ -66,25 +64,20 @@
                             {% endautoescape %}
                         </div> --}}
                     </div>
+                </li>
+                @endforeach
+            </ul>
         </div>
-        </li>
-        @endforeach
-        </ul>
     </div>
 </div>
 
-</div>
 <!-- header end -->
 <div class="clear"></div>
 <!-- service start -->
 <div class="detail_menu">
 
 </div>
-<div class="content_modal">
-
-</div>
-
-<div class="templatemo_servicewrapper" id="menu gone">
+<div class="templatemo_servicewrapper" id="menu">
     <div class="container">
         <div class="row">
             <h1>Menu</h1>
@@ -165,7 +158,7 @@
 <div class="clear"></div>
 <!-- work start -->
 
-<div class="templatemo_workwrapper" id="weather gone">
+<div class="templatemo_workwrapper" id="weather">
     <div>
         <div class="">
             <div class="report-container">
@@ -185,62 +178,62 @@
             </div>
         </div>
     </div>
-    <!--work end-->
-    <div class="clear"></div>
+</div>
+<!--work end-->
+<div class="clear"></div>
 
-    <!-- team start -->
-    <div class="templatemo_workwrapper" id="menu{{$navbar->folders[2]->id}}">
-        <div class="container">
-            <div class="row">
-                <h1>Nearby</h1>
-                <div class="col-md-12 templatemo_workmargin">Suspendisse potenti. Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien. Mauris luctus. Aenean elit turpis, volutpat id, facilisis eget, mollis a, est. Nulla eget elit pellentesque enim hendrerit venenatis.</div>
-                <div id="w">
-                    <div class="crsl-items" data-navigation="navbtns">
+<!-- team start -->
+<div class="templatemo_workwrapper" id="nearby">
+    <div class="container">
+        <div class="row">
+            <h1>Nearby</h1>
+            <div id="w">
+                <div class="crsl-items" data-navigation="navbtns">
 
-                        <div class="crsl-wrap">
-                            @foreach ($nearby->result as $n)
-                            <div class="crsl-item"><img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
-                                <div class="templatemo_team_name">{{$n->name}}</div>
-                                {{-- <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div> --}}
-                                <div class="templatemo_social">
-                                    {{-- <ul>
+                    <div class="crsl-wrap">
+                        @foreach ($nearby->result as $n)
+                        <div class="crsl-item"><img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
+                            <div class="templatemo_team_name">{{$n->name}}</div>
+                            {{-- <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div> --}}
+                            <div class="templatemo_social">
+                                {{-- <ul>
                                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                                             <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
                                             <li><a href="#"><span class="fa fa-skype"></span></a></li>
                                         </ul> --}}
-                                </div>
                             </div>
-                            @endforeach
-
                         </div>
+                        @endforeach
 
-                        <!-- @end .crsl-wrap -->
                     </div>
-                    <!-- @end .crsl-items -->
+
+                    <!-- @end .crsl-wrap -->
                 </div>
-                <div class="clear"></div>
-                <nav class="slidernav">
-                    <div id="navbtns" class="clearfix"><a href="#" class="previous"><img src="images/slideitmoo_back.png" alt="previous"></a> <a href="#" class="next"><img src="images/slideitmoo_forward.png" alt="next"></a></div>
-                </nav>
+                <!-- @end .crsl-items -->
             </div>
-            <script>
-                $(function() {
-                    $('.crsl-items').carousel({
-                        visible: 4,
-                        itemMinWidth: 180,
-                        itemEqualHeight: 370,
-                        itemMargin: 9,
-                    });
-                    $("a[href=#]").on('click', function(e) {
-                        e.preventDefault();
-                    });
-                });
-            </script>
+            <div class="clear"></div>
+            <nav class="slidernav">
+                <div id="navbtns" class="clearfix"><a href="#" class="previous"><img src="images/slideitmoo_back.png" alt="previous"></a> <a href="#" class="next"><img src="images/slideitmoo_forward.png" alt="next"></a></div>
+            </nav>
         </div>
+        <script>
+            $(function() {
+                $('.crsl-items').carousel({
+                    visible: 4,
+                    itemMinWidth: 180,
+                    itemEqualHeight: 370,
+                    itemMargin: 9,
+                });
+                $("a[href=#]").on('click', function(e) {
+                    e.preventDefault();
+                });
+            });
+        </script>
     </div>
-    <!-- team end -->
-    <div class="clear"></div>
+</div>
+<!-- team end -->
+<div class="clear"></div>
 
 
-    @endsection
+@endsection
