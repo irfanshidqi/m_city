@@ -18,7 +18,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <link rel="stylesheet" href="{{ asset('css/templatemo_misc.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('modal/modal.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('modal/modal.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
 
@@ -33,7 +33,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="{{ asset('js/jquery.lightbox.js') }}"></script>
     <script src="{{ asset('js/templatemo_custom.js') }}"></script>
     <script src="{{ asset('js/responsiveCarousel.min.js') }}"></script>
-    <script src="{{ asset('modal/modal.js') }}"></script>
+    {{-- <script src="{{ asset('modal/modal.js') }}"></script> --}}
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
@@ -248,7 +248,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
 
             var id = $id;
             var _token = $('input[name="_token"]').val();
-            console.log(id);
+            // console.log(id);
             // alert(id);
 
             $.ajax({
@@ -274,8 +274,8 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                         }
                     })
 
-                    $("# gone ").remove();
-                    console.log(data);
+                    $("#gone ").remove();
+                    // console.log(data);
                 }
             });
             setTimeout(remove_load, 280);

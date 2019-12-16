@@ -50,7 +50,10 @@
             <ul class="slides">
                 @foreach($slider->result as $sld)
                 <li>
+                    @if($sld->images != 0)
+
                     <img style="height:500px;" src="http://temanggung.mcity.id/files/content/{{$sld->images}}" alt="Slide 1">
+                    @endif
                     <div class="slider-caption">
                         <div class="templatemo_homewrapper">
                             <div class="templatemo_homebutton">
@@ -59,10 +62,7 @@
                             <div class="templatemo_hometitle">
                                 {{$sld->name}}
                             </div>
-                            {{-- <div class="templatemo_hometext">{% autoescape off %}
-                        {{$sld->description}}
-                            {% endautoescape %}
-                        </div> --}}
+
                     </div>
                 </li>
                 @endforeach
@@ -192,7 +192,11 @@
 
                     <div class="crsl-wrap">
                         @foreach ($nearby->result as $n)
-                        <div class="crsl-item"><img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
+                        <div class="crsl-item">
+                            {{-- @if($n->images != 0) --}}
+                            <img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
+
+                            {{-- @endif --}}
                             <div class="templatemo_team_name">{{$n->name}}</div>
                             {{-- <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div> --}}
                             <div class="templatemo_social">
