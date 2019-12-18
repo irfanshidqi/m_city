@@ -137,7 +137,7 @@ class HomeController extends Controller
              ';
         if (empty($string->result)) {
             $output .= '
-                <a class="example_e" href="#" target="_blank" rel="nofollow noopener">Tidak Ada</a>';
+                <a class="example_e" href="#"  rel="nofollow noopener">Tidak Ada</a>';
         } else {
             foreach ($string->result as $i) {
 
@@ -231,7 +231,7 @@ class HomeController extends Controller
              ';
         if (empty($string->result)) {
             $output .= '
-                <a class="example_e" href="#" target="_blank" rel="nofollow noopener">Tidak Ada</a>';
+                <a class="example_e" href="#"  rel="nofollow noopener">Tidak Ada</a>';
         } else {
             $n = 1;
             foreach ($string->result as $i) {
