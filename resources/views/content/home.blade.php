@@ -192,20 +192,14 @@
 
                     <div class="crsl-wrap">
                         @foreach ($nearby->result as $n)
-                        <div class="crsl-item">
+                        <div class="crsl-item bisa-klik" onclick="data_content({{$n->id}})">
                             {{-- @if($n->images != 0) --}}
                             <img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
 
                             {{-- @endif --}}
                             <div class="templatemo_team_name">{{$n->name}}</div>
-                            {{-- <div class="templatemo_team_post">deskripsi MODAL GAK BISA !</div> --}}
                             <div class="templatemo_social">
-                                {{-- <ul>
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                        </ul> --}}
+
                             </div>
                         </div>
                         @endforeach

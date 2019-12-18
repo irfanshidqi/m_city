@@ -79,6 +79,9 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             opacity: 0.5;
             cursor: pointer;
         }
+        .bisa-klik:hover {
+            opacity: 0.5;
+            cursor: pointer;        }
     </style>
     <style>
         .loader {
@@ -263,7 +266,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                     var json = JSON.parse(data);
                     Swal.fire({
                         title: '<span style="font-size:20px">' + json['result'].name + '<span>',
-                        html: '<span style="font-size:17px">' + json['result'].description + '<span>',
+                        html: '<span style="font-size:17px">' + json['result'].description + '<span>'+'<p> <a href="https://maps.google.com/?q=@'+ json['result'].lat +','+ json['result'].lng +'" target="_blank" >Klik Untuk Buka Maps</a> </p>',
                         imageUrl: 'http://temanggung.mcity.id/files/content/' + json['result'].images,
                         imageWidth: 400,
                         imageHeight: 300,
