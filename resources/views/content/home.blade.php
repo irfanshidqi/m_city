@@ -138,7 +138,7 @@
 
 
                     {{-- gallery --}}
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="agenda({{ $mn->menu_id }})">
                         <div class="templatemo_servicebox">
                             <img src="{{$mn->menu_icon_url}}" height="50" width="50">
                             <div class="templatemo_service_title">{{$mn->menu_name}}</div>

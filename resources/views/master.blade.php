@@ -38,6 +38,22 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <style>
+.myIframe {
+     position: relative;
+     padding-bottom: 65.25%;
+     padding-top: 30px;
+     height: 0;
+     overflow: auto; 
+     -webkit-overflow-scrolling:touch; 
+     border: solid black 1px;
+} 
+.myIframe iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+}
         #close {
             float: right;
             display: inline-block;
@@ -342,14 +358,14 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             })
         });
 
-        function modal() {
+        function agenda() {
             Swal.fire({
-                title: 'Sweet!',
-                text: 'Modal with a custom image.',
-                imageUrl: 'https://unsplash.it/400/200',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
+                // title: 'Agenda Temanggung',
+                html: '<div class="myIframe">'+'<iframe src="/agenda">'+'</iframe>'+'</div>',
+                width: '1000px',
+                        customClass: {
+                            html: 'swal-text',
+                        }
             })
         }
     </script>
