@@ -155,8 +155,8 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         }
 
         div.gallery-item img {
-            width: 100%;
-            height: auto;
+            max-width: 300px;
+    max-height: 200px;
         }
 
         div.desc {
@@ -387,9 +387,9 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
 
                     Swal.fire({
                         title: '<span style="font-size:20px">Galeri<span>',
-                        html: '<div class="gallery" id="gallery">' + myImages + '</div><div class="row"><div class="button" onclick="kurang()"><</div><div class="button" onclick="tambah()">></div></div>',
+                        html: '<div class="button bisa-klik" onclick="kurang()"><</div><div class="button bisa-klik" onclick="tambah()">></div>'+'<div class="row">'+'<div class="gallery" id="gallery">' + myImages + '</div>'+'</div>',
                         imageAlt: 'Custom image',
-                        width: '650px'
+                        width: '1000px'
                     })
                 }
             });
