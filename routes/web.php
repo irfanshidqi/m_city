@@ -18,4 +18,5 @@ Route::get('/data-agenda', 'AgendaController@event')->name('event.fetch');
 Route::post('/data-menu', 'HomeController@fetch_menu')->name('menu.fetch');
 Route::post('/detail-data-menu', 'HomeController@fetch_detailMenu')->name('detailmenu.fetch');
 Route::post('/data-content', 'HomeController@fetch_content')->name('content.fetch');
+Route::post('/data-gallery', 'HomeController@fetch_gallery')->name('gallery.fetch');
 Route::get('/data-lain', 'HomeController@fetch_more')->name('lain.fetch');

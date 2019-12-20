@@ -38,22 +38,24 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <style>
-.myIframe {
-     position: relative;
-     padding-bottom: 65.25%;
-     padding-top: 30px;
-     height: 0;
-     overflow: auto; 
-     -webkit-overflow-scrolling:touch; 
-     border: solid black 1px;
-} 
-.myIframe iframe {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-}
+        .myIframe {
+            position: relative;
+            padding-bottom: 65.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            border: solid black 1px;
+        }
+
+        .myIframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         #close {
             float: right;
             display: inline-block;
@@ -95,9 +97,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             opacity: 0.5;
             cursor: pointer;
         }
+
         .bisa-klik:hover {
             opacity: 0.5;
-            cursor: pointer;        }
+            cursor: pointer;
+        }
     </style>
     <style>
         .loader {
@@ -136,6 +140,43 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         .center {
             margin: auto;
 
+        }
+    </style>
+    <style>
+        div.gallery-item {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 190px;
+        }
+
+        div.gallery-item:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        div.button {
+            display: inline-block;
+            color: white;
+            border: 1px solid #ff8303;
+            background: #ff8303;
+            box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            vertical-align: middle;
+            width: 50px;
+            height: 25px;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
         }
     </style>
 </head>
@@ -282,7 +323,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                     var json = JSON.parse(data);
                     Swal.fire({
                         title: '<span style="font-size:20px">' + json['result'].name + '<span>',
-                        html: '<span style="font-size:17px">' + json['result'].description + '<span>'+'<p> <a href="https://maps.google.com/?q=@'+ json['result'].lat +','+ json['result'].lng +'" target="_blank" >Klik Untuk Buka Maps</a> </p>',
+                        html: '<span style="font-size:17px">' + json['result'].description + '<span>' + '<p> <a href="https://maps.google.com/?q=@' + json['result'].lat + ',' + json['result'].lng + '" target="_blank" >Klik Untuk Buka Maps</a> </p>',
                         imageUrl: 'http://temanggung.mcity.id/files/content/' + json['result'].images,
                         imageWidth: 400,
                         imageHeight: 300,
@@ -299,7 +340,62 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
             setTimeout(remove_load, 280);
         }
+
+        function agenda() {
+            Swal.fire({
+                // title: 'Agenda Temanggung',
+                html: '<div class="myIframe">' + '<iframe src="/agenda">' + '</iframe>' + '</div>',
+                width: '1000px',
+                customClass: {
+                    html: 'swal-text',
+                }
+            });
+        }
+        var page = 1;
+
+        function kurang() {
+            page--;
+            data_gallery(page);
+        }
+
+        function tambah() {
+            page++;
+            data_gallery(page);
+        }
+
+        function data_gallery($id) {
+            var load = document.getElementById('loader');
+
+            var id = $id;
+            var _token = $('input[name="_token"]').val();
+
+            $.ajax({
+                url: "{{ route('gallery.fetch') }}",
+                method: "POST",
+                data: {
+                    _token: _token,
+                    id: id
+                },
+                success: function(data) {
+
+                    var data = JSON.parse(data);
+                    console.log(data);
+
+                    var myImages = data.result.map(function(item) {
+                        return "<a target='_blank' href='http://temanggung.mcity.id/files/gallery/" + item.gallery_photo + "'><div class='gallery-item'><div class='content'><img src='http://temanggung.mcity.id/files/gallery/" + item.gallery_photo + "' alt=''><div class='desc'>Pengunggah : " + item.name + "</div></div></div></a>";
+                    }).join('');
+
+                    Swal.fire({
+                        title: '<span style="font-size:20px">Galeri<span>',
+                        html: '<div class="gallery" id="gallery">' + myImages + '</div><div class="row"><div class="button" onclick="kurang()"><</div><div class="button" onclick="tambah()">></div></div>',
+                        imageAlt: 'Custom image',
+                        width: '650px'
+                    })
+                }
+            });
+        }
     </script>
+
     <script>
         $(document).ready(function() {
             $('.klik-lain').click(function(e) {
@@ -357,18 +453,8 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                 }
             })
         });
-
-        function agenda() {
-            Swal.fire({
-                // title: 'Agenda Temanggung',
-                html: '<div class="myIframe">'+'<iframe src="/agenda">'+'</iframe>'+'</div>',
-                width: '1000px',
-                        customClass: {
-                            html: 'swal-text',
-                        }
-            })
-        }
     </script>
+
 </body>
 
 </html>

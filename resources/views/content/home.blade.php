@@ -63,7 +63,7 @@
                                 {{$sld->name}}
                             </div>
 
-                    </div>
+                        </div>
                 </li>
                 @endforeach
             </ul>
@@ -103,64 +103,54 @@
         </div>
         <br>
         @foreach($menu->result->default as $mn)
-            @if($mn->menu_id == 3)
+        @if($mn->menu_id == 3)
 
 
-                    {{-- gallery --}}
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
-                        <div class="templatemo_servicebox">
-                            <img src="{{$mn->menu_icon_url}}" height="50" width="50">
-                            <div class="templatemo_service_title">{{$mn->menu_name}}</div>
-                        </div>
-                    </div>
+        {{-- gallery --}}
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+            <div class="templatemo_servicebox">
+                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+            </div>
+        </div>
 
-            @endif
+        @endif
         @endforeach
 
         @foreach($menu->result->default as $mn)
-            @if($mn->menu_id != 23 && $mn->menu_id != 3 && $mn->menu_id != 19)
+        @if($mn->menu_id != 23 && $mn->menu_id != 3 && $mn->menu_id != 19)
 
 
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
-                        @csrf
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+            @csrf
 
-                        <div class="templatemo_servicebox">
-                            <img src="{{$mn->menu_icon_url}}" height="50" width="50">
-                            <div class="templatemo_service_title">{{$mn->menu_name}}</div>
-                        </div>
-                    </div>
+            <div class="templatemo_servicebox">
+                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+            </div>
+        </div>
 
-            @endif
-        @endforeach
+        @endif
         {{-- agenda --}}
-        @foreach($menu->result->default as $mn)
-            @if($mn->menu_id == 19)
+        @if($mn->menu_id == 19)
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="agenda({{ $mn->menu_id }})">
+            <div class="templatemo_servicebox">
+                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+            </div>
+        </div>
 
-
-                    {{-- gallery --}}
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="agenda({{ $mn->menu_id }})">
-                        <div class="templatemo_servicebox">
-                            <img src="{{$mn->menu_icon_url}}" height="50" width="50">
-                            <div class="templatemo_service_title">{{$mn->menu_name}}</div>
-                        </div>
-                    </div>
-
-            @endif
-        @endforeach
+        @endif
         {{-- galeri --}}
-        @foreach($menu->result->default as $mn)
-            @if($mn->menu_id == 23)
+        @if($mn->menu_id == 23)
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_gallery(1)">
+            <div class="templatemo_servicebox">
+                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+            </div>
+        </div>
 
-
-                    {{-- gallery --}}
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
-                        <div class="templatemo_servicebox">
-                            <img src="{{$mn->menu_icon_url}}" height="50" width="50">
-                            <div class="templatemo_service_title">{{$mn->menu_name}}</div>
-                        </div>
-                    </div>
-
-            @endif
+        @endif
         @endforeach
 
         {{-- lainnya --}}
@@ -176,43 +166,43 @@
         <br>
         {{-- harga pokok --}}
         @foreach($menu->result->more as $mm)
-            @if($mm->menu_id == 1 )
-                <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
-                    @csrf
+        @if($mm->menu_id == 1 )
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
+            @csrf
 
-                    <div class="templatemo_servicebox">
-                        <img src="{{$mm->menu_icon_url}}" height="50" width="50">
-                        <div class="templatemo_service_title">{{$mm->menu_name}}</div>
-                    </div>
-                </div>
-            @endif
+            <div class="templatemo_servicebox">
+                <img src="{{$mm->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mm->menu_name}}</div>
+            </div>
+        </div>
+        @endif
         @endforeach
         {{-- Pengaduan --}}
         @foreach($menu->result->more as $mm)
-            @if($mm->menu_id == 2 )
-                <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
-                    @csrf
+        @if($mm->menu_id == 2 )
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
+            @csrf
 
-                    <div class="templatemo_servicebox">
-                        <img src="{{$mm->menu_icon_url}}" height="50" width="50">
-                        <div class="templatemo_service_title">{{$mm->menu_name}}</div>
-                    </div>
-                </div>
-            @endif
+            <div class="templatemo_servicebox">
+                <img src="{{$mm->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mm->menu_name}}</div>
+            </div>
+        </div>
+        @endif
         @endforeach
         {{-- Layanan Publik semua --}}
         @foreach($menu->result->more as $mm)
 
-            @if($mm->menu_id != 1 && $mm->menu_id != 2 )
-                <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
-                    @csrf
+        @if($mm->menu_id != 1 && $mm->menu_id != 2 )
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
+            @csrf
 
-                    <div class="templatemo_servicebox">
-                        <img src="{{$mm->menu_icon_url}}" height="50" width="50">
-                        <div class="templatemo_service_title">{{$mm->menu_name}}</div>
-                    </div>
-                </div>
-            @endif
+            <div class="templatemo_servicebox">
+                <img src="{{$mm->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mm->menu_name}}</div>
+            </div>
+        </div>
+        @endif
 
         @endforeach
 
@@ -226,7 +216,8 @@
     <div>
         <div class="">
             <div class="report-container">
-                <h2><?php echo $wth->name; ?> Weather Status</h2>
+                <h2>Temanggung Weather Status</h2>
+                <br>
                 <div class="time">
                     <div><?php echo date("l g:i a", $currenttime); ?></div>
                     <div><?php echo date("jS F, Y", $currenttime); ?></div>
@@ -251,6 +242,7 @@
     <div class="container">
         <div class="row">
             <h1>Nearby</h1>
+            <br>
             <div id="w">
                 <div class="crsl-items" data-navigation="navbtns">
 
@@ -258,7 +250,7 @@
                         @foreach ($nearby->result as $n)
                         <div class="crsl-item bisa-klik" onclick="data_content({{$n->id}})">
                             {{-- @if($n->images != 0) --}}
-                            <img style="width:100px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
+                            <img style="width:180px;" src="http://temanggung.mcity.id/files/content/{{$n->images}}" alt="person 1">
 
                             {{-- @endif --}}
                             <div class="templatemo_team_name">{{$n->name}}</div>
