@@ -84,13 +84,13 @@
             <div id="loader" class="loader center d-none"></div>
             <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
 
-                @foreach($det->result as $mn)
-                <div class="paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
+                @foreach($det->result as $nn)
+                <div class="paddingbot klik-menu" onclick="data_detail_menu({{ $nn->id }})">
                     @csrf
 
                     <div class="templatemo_servicebox">
                         {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
-                        <div class="templatemo_service_title">{{$mn->name}}</div>
+                        <div class="templatemo_service_title">{{$nn->name}}</div>
                     </div>
                 </div>
                 @endforeach
