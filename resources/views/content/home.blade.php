@@ -102,23 +102,9 @@
 
         </div>
         <br>
-        @foreach($menu->result->default as $mn)
-        @if($mn->menu_id == 3)
-
-
-        {{-- gallery --}}
-        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
-            <div class="templatemo_servicebox">
-                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
-                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
-            </div>
-        </div>
-
-        @endif
-        @endforeach
 
         @foreach($menu->result->default as $mn)
-        @if($mn->menu_id != 23 && $mn->menu_id != 3 && $mn->menu_id != 19)
+        @if($mn->menu_id != 23 && $mn->menu_id != 3 && $mn->menu_id != 19 )
 
 
         <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mn->menu_id }})">
@@ -134,6 +120,15 @@
         {{-- agenda --}}
         @if($mn->menu_id == 19)
         <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="agenda({{ $mn->menu_id }})">
+            <div class="templatemo_servicebox">
+                <img src="{{$mn->menu_icon_url}}" height="50" width="50">
+                <div class="templatemo_service_title">{{$mn->menu_name}}</div>
+            </div>
+        </div>
+
+        @endif{{-- pelayanan publik --}}
+        @if($mn->menu_id == 3)
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="pelayanan({{ $mn->menu_id }})">
             <div class="templatemo_servicebox">
                 <img src="{{$mn->menu_icon_url}}" height="50" width="50">
                 <div class="templatemo_service_title">{{$mn->menu_name}}</div>
@@ -180,14 +175,16 @@
         {{-- Pengaduan --}}
         @foreach($menu->result->more as $mm)
         @if($mm->menu_id == 2 )
-        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
-            @csrf
+        <a target="_blank" href="https://sms.temanggungkab.go.id/layanan.html">
+            <div class="col-md-3 col-sm-6 paddingbot klik-menu">
+                @csrf
 
-            <div class="templatemo_servicebox">
-                <img src="{{$mm->menu_icon_url}}" height="50" width="50">
-                <div class="templatemo_service_title">{{$mm->menu_name}}</div>
+                <div class="templatemo_servicebox">
+                    <img src="{{$mm->menu_icon_url}}" height="50" width="50">
+                    <div class="templatemo_service_title">{{$mm->menu_name}}</div>
+                </div>
             </div>
-        </div>
+        </a>
         @endif
         @endforeach
         {{-- Layanan Publik semua --}}
