@@ -350,6 +350,37 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             });
             setTimeout(remove_load, 280);
         }
+        function harga_pokok(){
+            var date_start = '23-12-2019';
+            var date_start_submit = '23-12-2019';
+            var date_end = '23-12-2019';
+            var date_end_submit = '23-12-2019';
+            var in_kabupaten = '23';
+            var in_pasar = '87';
+            var _token = $('input[name="_token"]').val();
+
+            $.ajax({
+                url:"{{ route('harga.fetch') }}",
+                method:"POST",
+                data:{date_start:date_start,
+                 date_start_submit:date_start_submit,
+                  date_end:date_end,
+                   date_end_submit:date_end_submit,
+                    in_kabupaten:in_kabupaten,
+                     in_pasar:in_pasar,
+                      _token:_token},
+                success: function(data){
+                    Swal.fire({
+                        title: '<span style="font-size:20px">Harga Pokok<span>',
+                        html: data,
+                        width: '650px',
+                        customClass: {
+                            html: 'swal-text',
+                        }
+                    })
+                }
+            });
+        }
 
         function agenda() {
             Swal.fire({

@@ -338,4 +338,38 @@ class HomeController extends Controller
 
         return $response;
     }
+    public function harga_pokok(Request $request){
+        $start = $request->get('date_start');
+        $start_sub = $request->get('date_start_submit');
+        $end = $request->get('date_end');
+        $end_sub = $request->get('date_end_submit');
+        $kab = $request->get('in_kabupaten');
+        $pas = $request->get('in_pasar');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://hargajateng.org/get_harian/",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "date_start=" . $start . "&date_start_submit=" . $start_sub . "&date_end=" . $end . "&date_end_submit=" . $end_sub . "&in_kabupaten=" . $kab . "&in_pasar=" . $pas . "",
+            CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded",
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            return $response;
+        }
+    }
 }

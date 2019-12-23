@@ -162,7 +162,7 @@
         {{-- harga pokok --}}
         @foreach($menu->result->more as $mm)
         @if($mm->menu_id == 1 )
-        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu({{ $mm->menu_id }})">
+        <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="harga_pokok()">
             @csrf
 
             <div class="templatemo_servicebox">
