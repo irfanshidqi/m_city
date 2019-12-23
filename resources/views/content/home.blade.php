@@ -213,7 +213,7 @@
     <div>
         <div class="">
             <div class="report-container">
-                <h2>Temanggung Weather Status</h2>
+                <h2>Status Cuaca Temanggung</h2>
                 <br>
                 <div class="time">
                     <div><?php echo date("l g:i a", $currenttime); ?></div>
@@ -238,7 +238,7 @@
 <div class="templatemo_workwrapper" id="nearby">
     <div class="container">
         <div class="row">
-            <h1>Nearby</h1>
+            <h1>Lokasi Terdekat</h1>
             <br>
             <div id="w">
                 <div class="crsl-items" data-navigation="navbtns">
