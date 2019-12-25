@@ -14,10 +14,10 @@
         <div class="container">
             <div class="row">
                 <div class="templatemo_titlewrapper"><img src="{{ asset('images/templatemo_logobg.png') }}" alt="logo background">
-                    <div class="templatemo_title"><img src="{{ asset('images/tittle.png') }}" alt=""></div>
+                    <div class="templatemo_title"><span>Temanggung Gandem</span></div>
                 </div>
                 <div class="clear"></div>
-                <div class="templatemo_titlewrappersmall"><img src="{{ asset('images/tittle.png') }}" alt=""></div>
+                <div class="templatemo_titlewrappersmall"><span>Temanggung Gandem</span></div>
 
                 <nav class="navbar navbar-default templatemo_menu" role="navigation">
                     <div class="container-fluid">
@@ -57,7 +57,7 @@
                     <div class="slider-caption">
                         <div class="templatemo_homewrapper">
                             <div class="templatemo_homebutton">
-                                <img style="width:200px;height:100px;" src="{{asset('images/temanggung/temanggung.png')}}">
+                                <img style="width:200px;height:100px;" src="{{asset('images/tittle.png')}}">
                             </div>
                             <div class="templatemo_hometitle">
                                 {{$sld->name}}
