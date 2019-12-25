@@ -14,20 +14,20 @@
         <div class="container">
             <div class="row">
                 <div class="templatemo_titlewrapper"><img src="{{ asset('images/templatemo_logobg.png') }}" alt="logo background">
-                    <div class="templatemo_title"><span>Temanggung Gandem</span></div>
+                    <div class="templatemo_title"><img src="{{ asset('images/tittle.png') }}" alt=""></div>
                 </div>
                 <div class="clear"></div>
-                <div class="templatemo_titlewrappersmall">Temanggung Gandem</div>
+                <div class="templatemo_titlewrappersmall"><img src="{{ asset('images/tittle.png') }}" alt=""></div>
 
                 <nav class="navbar navbar-default templatemo_menu" role="navigation">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div id="top-menu">
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <div class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav">
                                     <li><a class="menu" href="#menu">Menu Service</a></li>
                                     <li><a class="menu" href="#content">Content</a></li>

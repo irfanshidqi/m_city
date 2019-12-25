@@ -205,7 +205,49 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             float: left;
         }
 
+        div.templatemo_title img {
+            max-width: 20%;
+            max-height: auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            div.templatemo_titlewrappersmall img {
+                max-width: 20%;
+                max-height: auto;
+                position: absolute;
+            }
+
+            div.gallery {
+                margin: 15px;
+            }
+
+            div.gallery-item img {
+                max-width: 250px;
+                max-height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            div.templatemo_titlewrappersmall img {
+                margin-top: 10px;
+                max-width: 30%;
+                max-height: auto;
+                position: absolute;
+            }
+        }
+
         @media screen and (max-width: 600px) {
+            div.templatemo_titlewrappersmall img {
+                margin-top: 10px;
+                max-width: 30%;
+                max-height: auto;
+                position: absolute;
+            }
+
+            div.gallery {
+                margin: 15px;
+            }
+
             img.yutub {
                 max-width: 40%;
                 height: auto;
@@ -549,6 +591,12 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             $('.klik-lain').on('click', function() {
                 // $('.lain-nya').toggleClass('d-none');
                 $("#carousel-lain").toggle();
+            });
+        });
+        $(document).ready(function() {
+            $('.navbar-toggle').on('click', function() {
+                // $('.lain-nya').toggleClass('d-none');
+                $(".navbar-collapse").toggle();
             });
         });
     </script>
