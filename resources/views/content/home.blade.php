@@ -30,7 +30,6 @@
                             <div class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav">
                                     <li><a class="menu" href="#menu">Menu Service</a></li>
-                                    <li><a class="menu" href="#content">Content</a></li>
                                     <li><a class="menu" href="#">Home</a></li>
                                     <li><a class="menu" href="#nearby">Nearby</a></li>
                                     <li><a class="menu" href="#weather">Weather</a></li>

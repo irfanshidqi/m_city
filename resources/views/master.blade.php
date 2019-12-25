@@ -210,6 +210,10 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
             max-height: auto;
         }
 
+        div.navbar-nav {
+            margin-left: 50px;
+        }
+
         @media screen and (max-width: 800px) {
             div.templatemo_titlewrappersmall img {
                 max-width: 20%;
