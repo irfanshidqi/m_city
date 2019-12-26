@@ -243,6 +243,7 @@ h1 {
 }
 .templatemo_contactmargin {
     margin-top: 30px;
+    padding-bottom: 35px;
 }
 .templatemo_address_title {
     float: left;
@@ -283,7 +284,6 @@ textarea {
     color: #fff;
     width: 100%;
     padding: 20px 0;
-    margin-top: 50px;
 }
 .templatemo_footerwrapper a {
     color: #fff;
@@ -345,6 +345,9 @@ Flexslider Overrides
     opacity: 0.5;
     width: 100%;
     z-index: 7;
+}
+.slider-caption img {
+    opacity: 1;
 }
 .flex-control-nav {
     bottom: 15px;
@@ -419,12 +422,18 @@ Gallery Styles
 Media Queries 
 --------------------------------------------------------*/
 @media (max-width: 767px) {
+    .templatemo_homebutton {
+        margin: 40px auto 0 auto;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 230px;
+    }
     .templatemo_titlewrapper {
         display: none;
     }
     .templatemo_titlewrappersmall {
         float: left;
-        font-size: 28px;
+        font-size: 22px;
         color: #ffffff;
         line-height: 50px;
         margin-left: 20px;
@@ -456,8 +465,11 @@ Media Queries
 }
 
 @media (max-width: 991px) {
-    .templatemo_homewrapper {
-        display: none;
+    .templatemo_homebutton {
+        margin: 40px auto 0 auto;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 230px;
     }
     .margin_bottom_2col {
         margin-bottom: 20px;
@@ -465,6 +477,19 @@ Media Queries
 }
 
 @media (max-width: 319px) {
+    .templatemo_titlewrappersmall {
+        float: left;
+        font-size: 20px;
+        color: #ffffff;
+        line-height: 50px;
+        margin-left: 20px;
+    }
+    .templatemo_homebutton {
+        margin: 40px auto 0 auto;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 230px;
+    }
     .slidernav a.previous {
         left: 0%;
     }
@@ -474,6 +499,12 @@ Media Queries
 }
 
 @media (min-width: 320px) {
+    .templatemo_homebutton {
+        margin: 40px auto 0 auto;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 230px;
+    }
     .templatemo_workbox {
         width: 100%;
     }
@@ -486,6 +517,12 @@ Media Queries
 }
 
 @media (min-width: 768px) {
+    .templatemo_homebutton {
+        margin: 40px auto 0 auto;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 230px;
+    }
     .templatemo_topbar {
         height: 35px;
     }

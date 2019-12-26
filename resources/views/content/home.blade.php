@@ -240,7 +240,7 @@
 <div class="clear"></div>
 
 <!-- team start -->
-<div class="templatemo_workwrapper" id="nearby">
+<div class="templatemo_servicewrapper" id="nearby">
     <div class="container">
         <div class="row">
             <h1>Lokasi Terdekat</h1>
