@@ -139,6 +139,7 @@
         <div class=" menu-data">
 
         </div>
+        <div class="clear"></div>
 
         <div id="loader" class="loader center d-none"></div>
         <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
