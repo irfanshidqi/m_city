@@ -140,6 +140,22 @@
 
         </div>
 
+        <div id="loader" class="loader center d-none"></div>
+        <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
+
+            @foreach($det->result as $nn)
+            <div class="paddingbot klik-menu" onclick="data_detail_menu({{ $nn->id }})">
+                @csrf
+
+                <div class="templatemo_servicebox">
+                    {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
+                    <div class="templatemo_service_title">{{$nn->name}}</div>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+
         <h1>Layanan Publik</h1>
 
         <br>
@@ -187,46 +203,35 @@
 
         @endforeach
     </div>
-    <div id="loader" class="loader center d-none"></div>
-    <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
-
-        @foreach($det->result as $nn)
-        <div class="paddingbot klik-menu" onclick="data_detail_menu({{ $nn->id }})">
-            @csrf
-
-            <div class="templatemo_servicebox">
-                {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
-                <div class="templatemo_service_title">{{$nn->name}}</div>
-            </div>
-        </div>
-        @endforeach
-
-    </div>
 
 </div>
 <!-- service end -->
 <div class="clear"></div>
 <!-- work start -->
-
-<div class="templatemo_workwrapper" id="weather">
-    <div>
-        <div class="">
-            <div class="report-container">
-                <h2>Status Cuaca Temanggung</h2>
-                <br>
-                <div class="time">
-                    <div><?php echo date("l g:i a", $currenttime); ?></div>
-                    <div><?php echo date("jS F, Y", $currenttime); ?></div>
-                    <div><?php echo ucwords($wth->weather[0]->description); ?></div>
-                </div>
-                <div class="weather-forecast">
-                    <img src="http://openweathermap.org/img/w/<?php echo $wth->weather[0]->icon; ?>.png" class="weather-icon" />
-                </div>
-                <div> <span class="max-temperature"><i class="icon-arrow-up"></i> <?php echo $wth->main->temp_max; ?>°C</span><span class="min-temperature"> <i class="icon-arrow-down"></i> <?php echo $wth->main->temp_min; ?>°C</span></div>
-                <div class="time">
-                    <div>Kelembapan: <?php echo $wth->main->humidity; ?> %</div>
-                    <div>Angin: <?php echo $wth->wind->speed; ?> km/h</div>
-                </div>
+<div class="container templatemo_contactmargin">
+    <div class="row">
+        <div class="col-md-6" style="padding: 0px; margin-left: -10%">
+            <img src="https://openweathermap.org/themes/openweathermap/assets/img/new-history-forecast-bulk.png">
+        </div>
+        <div class="col-md-6" style="padding-left: 6%; margin-top: 2%">
+            <div class="templatemo_address_title">
+                <h3>Status Cuaca Temanggung</h3>
+            </div>
+            <h5>Prakiraan Cuaca Temanggung - <span style="font-weight: bold"><?php echo date("jS F, Y", $currenttime); ?></span></h5>
+            <div class="clear"></div>
+            <div class="templatemo_address_title" style="font-size: 150%; margin-bottom: 10px">
+                <img src="http://openweathermap.org/img/w/<?php echo $wth->weather[0]->icon; ?>.png" class="weather-icon" style="width: 12%"><?php echo ucwords($wth->weather[0]->description); ?>
+            </div>
+            <div class="clear"></div>
+            <div class="weather-forecast">
+                <i class="fa fa-fire" style="font-size: 20px; color: orangered"></i>&ensp;
+                <span class="min-temperature"> <?php echo $wth->main->temp_min; ?>°C - <?php echo $wth->main->temp_max; ?>°C</span>
+                &ensp;&ensp;
+                <i class="fa fa-tint" style="font-size: 20px; color: deepskyblue"></i>&ensp;
+                <span class="min-temperature"> <?php echo $wth->main->humidity; ?>%</span>
+                &ensp;&ensp;
+                <i class="fa fa-stack-overflow" style="font-size: 20px"></i>&ensp;
+                <span class="min-temperature"> <?php echo $wth->wind->speed; ?> km/h</span>
             </div>
         </div>
     </div>
