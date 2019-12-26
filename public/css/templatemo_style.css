@@ -629,8 +629,8 @@ Media Queries
         width: 100%;
     }
     .templatemo_hometitle {
-        font-size: 40px;
-        margin-top: 40px;
+        font-size: 22px;
+        margin-top: 70px;
     }
     .templatemo_hometext {
         text-align: center;
@@ -672,7 +672,7 @@ Media Queries
         width: 100%;
     }
     .templatemo_hometitle {
-        font-size: 42px;
+        font-size: 22px;
         margin-top: 80px;
     }
     .templatemo_hometext {
