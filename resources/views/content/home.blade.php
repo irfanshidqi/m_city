@@ -72,10 +72,6 @@
 
 <!-- header end -->
 <div class="clear"></div>
-<!-- service start -->
-<div class="detail_menu">
-
-</div>
 <div class="templatemo_servicewrapper" id="menu">
     <div class="container">
         <div class="row">
@@ -203,6 +199,11 @@
         @endif
 
         @endforeach
+    </div>
+    <div class="clear"></div>
+    <!-- service start -->
+    <div class="detail_menu">
+
     </div>
 
 </div>
