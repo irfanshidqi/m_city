@@ -221,10 +221,10 @@ class HomeController extends Controller
 
         curl_close($ch);
         $string = json_decode($response);
-
-        $output = '';
-
         $output = '
+        <div class="row">
+            <h3>Hasil Pencarian</h3>
+        </div>
             <div class="templatemo_servicewrapper" id="detail_menu">
                 <div class="container">
       
@@ -338,7 +338,8 @@ class HomeController extends Controller
 
         return $response;
     }
-    public function harga_pokok(Request $request){
+    public function harga_pokok(Request $request)
+    {
         $start = $request->get('date_start');
         $start_sub = $request->get('date_start_submit');
         $end = $request->get('date_end');

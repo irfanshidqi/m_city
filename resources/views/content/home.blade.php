@@ -200,6 +200,7 @@
 
         @endforeach
     </div>
+    <br>
     <div class="clear"></div>
     <!-- service start -->
     <div class="detail_menu">
