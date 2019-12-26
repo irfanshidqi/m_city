@@ -21,6 +21,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
     {{-- <link rel="stylesheet" href="{{ asset('modal/modal.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- JavaScripts -->
     <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
@@ -143,6 +144,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         }
     </style>
     <style>
+        div.owl-carousel {
+            margin: 27px;
+            width: 95%;
+        }
+
         div.gallery-item {
             margin: 5px;
             border: 1px solid #ccc;
@@ -215,6 +221,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         }
 
         @media screen and (max-width: 800px) {
+            div.owl-carousel {
+                margin: 27px;
+                width: 95%;
+            }
+
             div.templatemo_titlewrappersmall img {
                 max-width: 20%;
                 max-height: auto;
@@ -229,9 +240,7 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
                 max-width: 250px;
                 max-height: 100px;
             }
-        }
 
-        @media screen and (max-width: 800px) {
             div.templatemo_titlewrappersmall img {
                 margin-top: 10px;
                 max-width: 30%;
@@ -241,6 +250,11 @@ http://www.templatemo.com/preview/templatemo_426_Temanggung Gandem
         }
 
         @media screen and (max-width: 600px) {
+            div.owl-carousel {
+                margin: 27px;
+                width: 95%;
+            }
+
             div.templatemo_titlewrappersmall img {
                 margin-top: 10px;
                 max-width: 30%;

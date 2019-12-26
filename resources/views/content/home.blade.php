@@ -80,25 +80,6 @@
     <div class="container">
         <div class="row">
             <h1>Menu</h1>
-            <div id="loader" class="loader center d-none"></div>
-            <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
-
-                @foreach($det->result as $nn)
-                <div class="paddingbot klik-menu" onclick="data_detail_menu({{ $nn->id }})">
-                    @csrf
-
-                    <div class="templatemo_servicebox">
-                        {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
-                        <div class="templatemo_service_title">{{$nn->name}}</div>
-                    </div>
-                </div>
-                @endforeach
-
-            </div>
-            <div class=" menu-data">
-
-            </div>
-
         </div>
         <br>
 
@@ -155,6 +136,10 @@
             </div>
         </div>
 
+        <div class=" menu-data">
+
+        </div>
+
         <h1>Layanan Publik</h1>
 
         <br>
@@ -201,8 +186,23 @@
         @endif
 
         @endforeach
+    </div>
+    <div id="loader" class="loader center d-none"></div>
+    <div class="owl-carousel owl-loaded owl-drag" id="carousel-lain" style="display: none;">
+
+        @foreach($det->result as $nn)
+        <div class="paddingbot klik-menu" onclick="data_detail_menu({{ $nn->id }})">
+            @csrf
+
+            <div class="templatemo_servicebox">
+                {{-- <img src="{{$mn->menu_icon_url}}" height="50" width="50"> --}}
+                <div class="templatemo_service_title">{{$nn->name}}</div>
+            </div>
+        </div>
+        @endforeach
 
     </div>
+
 </div>
 <!-- service end -->
 <div class="clear"></div>
@@ -220,11 +220,12 @@
                     <div><?php echo ucwords($wth->weather[0]->description); ?></div>
                 </div>
                 <div class="weather-forecast">
-                    <img src="http://openweathermap.org/img/w/<?php echo $wth->weather[0]->icon; ?>.png" class="weather-icon" /> <?php echo $wth->main->temp_max; ?>°C<span class="min-temperature"><?php echo $wth->main->temp_min; ?>°C</span>
+                    <img src="http://openweathermap.org/img/w/<?php echo $wth->weather[0]->icon; ?>.png" class="weather-icon" />
                 </div>
+                <div> <span class="max-temperature"><i class="icon-arrow-up"></i> <?php echo $wth->main->temp_max; ?>°C</span><span class="min-temperature"> <i class="icon-arrow-down"></i> <?php echo $wth->main->temp_min; ?>°C</span></div>
                 <div class="time">
-                    <div>Humidity: <?php echo $wth->main->humidity; ?> %</div>
-                    <div>Wind: <?php echo $wth->wind->speed; ?> km/h</div>
+                    <div>Kelembapan: <?php echo $wth->main->humidity; ?> %</div>
+                    <div>Angin: <?php echo $wth->wind->speed; ?> km/h</div>
                 </div>
             </div>
         </div>
