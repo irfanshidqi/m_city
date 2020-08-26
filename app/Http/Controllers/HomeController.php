@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $data['json_data'] = $this->test();
         $data['wth'] = $this->weather();
         $data['navbar'] = $this->navbar();
         $data['menu'] = $this->menu();
@@ -16,7 +19,7 @@ class HomeController extends Controller
         $data['nearby'] = $this->nearby();
         $data['det'] = $this->det();
 
-        return view('content.home', $data);
+        return view('home', $data);
     }
 
     public function navbar()
@@ -173,9 +176,9 @@ class HomeController extends Controller
         foreach ($string->result->more as $i) {
 
             $output .= '
-                    <div class="col-md-3 col-sm-6 paddingbot klik-menu" onclick="data_menu(' . $i->menu_id . ')">
+                    <div class="col-md-3 col-sm-3 paddingbot klik-menu" onclick="data_menu(' . $i->menu_id . ')">
                     <div class="templatemo_servicebox">
-                        <img src="' . $i->menu_icon_url . '" height="50" width="50">
+                        <img class="gambar_content" src="' . $i->menu_icon_url . '" height="50" width="50">
                         <div class="templatemo_service_title">' . $i->menu_name . '</div>
                     </div>
                  </div>
@@ -204,7 +207,23 @@ class HomeController extends Controller
         curl_close($ch);
         return json_decode($response);
     }
+    public function test()
+    {
+        $googleApiUrl = "http://temanggung.mcity.id/index.php?mod=m.services&sub=content&act=view&typ=html&take=content_multicat&lang=id";
 
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $googleApiUrl);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+
+        curl_close($ch);
+        return $response;
+    }
     public function fetch_detailMenu(Request $request)
     {
         $googleApiUrl = "http://temanggung.mcity.id/index.php?mod=m.services&sub=content&act=view&typ=html&take=content_multicat&lang=id&cat_id=" . $request->get('id') . "";
@@ -223,8 +242,9 @@ class HomeController extends Controller
         $string = json_decode($response);
         $output = '
         <div class="row">
-            <h3>Hasil Pencarian</h3>
+            <h2 style="text-align: center;">Hasil Pencarian</h2>
         </div>
+        <br>
             <div class="templatemo_servicewrapper" id="detail_menu">
                 <div class="container">
       
@@ -239,10 +259,10 @@ class HomeController extends Controller
 
                     $output .= '
                     <div class="row">
-                        <div class="col-md-3 paddingbot klik-lain" onclick="data_content(' . $i->id . ')">
+                        <div class="col-md-3 col-sm-3 col-xs-12 paddingbot klik-lain bisa-klik" onclick="data_content(' . $i->id . ')">
                             <div class="templatemo_servicebox">
-                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="150" width="150">
-                                <div class="templatemo_service_title">' . $i->name . '</div>
+                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="auto" width="100%">
+                                <div class="templatemo_service_title">' . Str::limit($i->name, 20) . '</div>
                                 <p>' . $i->district . '</p>
                             </div>
                         </div>';
@@ -251,10 +271,10 @@ class HomeController extends Controller
                         </div>';
                 } else {
                     $output .= '
-                        <div class="col-md-3 paddingbot klik-lain" onclick="data_content(' . $i->id . ')">
+                        <div class="col-md-3 col-sm-3 col-xs-12 paddingbot klik-lain bisa-klik" onclick="data_content(' . $i->id . ')">
                             <div class="templatemo_servicebox">
-                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="150" width="150">
-                                    <div class="templatemo_service_title">' . $i->name . '</div>
+                                <img src="http://temanggung.mcity.id/files/content/' . $i->images . '" height="auto" width="100%">
+                                    <div class="templatemo_service_title">' . Str::limit($i->name, 20) . '</div>
                                 <p>' . $i->district . '</p>
                             </div>
                         </div>';
